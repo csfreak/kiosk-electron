@@ -1,5 +1,8 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron')
+
+app.commandLine.appendSwitch('ignore-certificate-errors')
+
 const path = require('path')
 
 function createWindow () {
