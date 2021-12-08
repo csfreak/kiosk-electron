@@ -27,6 +27,8 @@ jobs:
       - uses: pguyot/arm-runner-action@v1
         id: build_image
         with:
+          image_additional_mb: 400
+          cpu: cortex-a8
           commands: |
               wget https://nodejs.org/dist/latest-v17.x/node-v17.2.0-linux-armv7l.tar.xz
               tar -xJvf node-v17.2.0-linux-armv7l.tar.xz
