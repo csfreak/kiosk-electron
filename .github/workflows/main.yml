@@ -28,7 +28,7 @@ jobs:
         id: build_image
         with:
           commands: |
-              apt install npm -y
+              apt clean && apt update && apt install npm -y
               npm ci
               npm run make
               
