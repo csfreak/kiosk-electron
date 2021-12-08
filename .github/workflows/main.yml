@@ -30,6 +30,5 @@ jobs:
         with:
           node-version: 17.x
 
-      - uses: ng-easy/npm-install@v1.7.2
-
+      - run: npm ci
       - run: npm run make --arch armv7
