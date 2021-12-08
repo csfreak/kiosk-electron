@@ -28,7 +28,9 @@ jobs:
         id: build_image
         with:
           commands: |
-              apt clean && apt update && apt install npm -y
+              wget https://nodejs.org/dist/latest-v17.x/node-v17.2.0-linux-armv7l.tar.xz
+              tar -xJvf node-v17.2.0-linux-armv7l.tar.xz
+              export PATH=$PATH:./node-v17.2.0-linux-armv7l/bin/
               npm ci
               npm run make
               
