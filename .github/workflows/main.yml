@@ -24,8 +24,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      - name: Electron Forge Action
-        uses: yinxulai/actions-electron-forge@0.05
+      
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.5.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          node-version: 17.x
+
+      - uses: ng-easy/npm-install@v1.7.2
+
+      - run: npm run make --arch armv7
